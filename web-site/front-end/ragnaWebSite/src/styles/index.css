@@ -19,3 +19,17 @@ button,
 a {
   cursor: pointer;
 }
+
+.top{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.back-button{
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}

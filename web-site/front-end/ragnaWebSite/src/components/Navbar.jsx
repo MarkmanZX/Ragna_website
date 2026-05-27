@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
@@ -5,10 +6,18 @@ export default function Navbar() {
         <nav className="navbar">
             <h1 className="logo"> Ragna FC </h1>
             <ul className="nav-links">
-                <li>Home</li>
-                <li>Elenco</li>
-                <li>Jogos</li>
-                <li>Galeria</li>
+                <li>
+                    <Link to="/"> Home </Link>
+                </li>
+                <li>
+                    <Link to="/cast"> Elenco </Link>
+                </li>
+                <li>
+                    <Link to="/games"> Jogos </Link>
+                </li>
+                <li>
+                    <Link to="/gallery"> Galeria </Link>
+                </li>
             </ul>
         </nav>
     );

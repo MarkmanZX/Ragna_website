@@ -10,7 +10,7 @@ export default function Hero() {
                     Mais que um time. Uma identidade.
                 </p>
 
-                <button>Ver Elenco</button>
+                <button onClick={() => window.location.href = '/cast'}>Ver Elenco</button>
             </div>
         </section>
     );
