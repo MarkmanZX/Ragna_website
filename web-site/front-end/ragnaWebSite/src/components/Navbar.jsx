@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 
-export default function Navbar() {
+function Navbar() {
     return(
         <nav className="navbar">
             <h1 className="logo"> Ragna FC </h1>
@@ -22,3 +22,5 @@ export default function Navbar() {
         </nav>
     );
 }
+
+export default Navbar;

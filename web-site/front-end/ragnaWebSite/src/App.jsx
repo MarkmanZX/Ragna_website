@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Cast from './pages/Cast';
@@ -17,6 +18,7 @@ function App() {
       <Route path="/games" element={<Games />} />
       <Route path="/gallery" element={<Gallery />} />
     </Routes>
+    <Footer />
     </>
   );
 }

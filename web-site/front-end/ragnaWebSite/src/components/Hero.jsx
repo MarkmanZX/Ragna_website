@@ -1,6 +1,6 @@
 import '../styles/Hero.css';
 
-export default function Hero() {
+function Hero() {
     return(
         <section className="hero">
             <div className="hero-content">
@@ -15,3 +15,5 @@ export default function Hero() {
         </section>
     );
 }
+
+export default Hero;

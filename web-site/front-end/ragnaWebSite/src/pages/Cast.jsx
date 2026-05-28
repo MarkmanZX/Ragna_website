@@ -1,7 +1,7 @@
 import '../pages/Cast.css';
 import Pessoa from '../assets/images/pessoa.png';
 
-export default function Cast(){
+function Cast(){
     return(
         <div>
             <div className="top">
@@ -31,3 +31,5 @@ export default function Cast(){
         </div>
     );
 }
+
+export default Cast;

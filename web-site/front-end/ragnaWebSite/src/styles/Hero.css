@@ -5,7 +5,7 @@
 }
 
 .hero{
-    height: 90vh;
+    min-height: 90vh;
     background-color: #353535;
     display: flex;
     align-items: center;
