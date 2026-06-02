@@ -1,15 +1,27 @@
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
+import logoRagna from '../assets/images/logoRagna.png';
 
-export default function Navbar() {
+function Navbar() {
     return(
         <nav className="navbar">
-            <h1 className="logo"> Ragna FC </h1>
+            <img src={logoRagna} className="logoRagna" />
             <ul className="nav-links">
-                <li>Home</li>
-                <li>Elenco</li>
-                <li>Jogos</li>
-                <li>Galeria</li>
+                <li>
+                    <Link to="/"> Home </Link>
+                </li>
+                <li>
+                    <Link to="/cast"> Elenco </Link>
+                </li>
+                <li>
+                    <Link to="/games"> Jogos </Link>
+                </li>
+                <li>
+                    <Link to="/gallery"> Galeria </Link>
+                </li>
             </ul>
         </nav>
     );
 }
+
+export default Navbar;

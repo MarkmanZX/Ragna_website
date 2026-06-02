@@ -1,0 +1,23 @@
+.containerGallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 500px;
+}
+
+.galleryItem{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+img{
+    width: 30%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}

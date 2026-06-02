@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
 
-export default function Hero() {
+function Hero() {
     return(
         <section className="hero">
             <div className="hero-content">
@@ -10,8 +11,12 @@ export default function Hero() {
                     Mais que um time. Uma identidade.
                 </p>
 
-                <button>Ver Elenco</button>
+                <Link to="/cast">
+                    <button>Ver Elenco</button>
+                </Link>
             </div>
         </section>
     );
 }
+
+export default Hero;

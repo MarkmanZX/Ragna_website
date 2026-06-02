@@ -4,6 +4,25 @@
     box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.app{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+  display: flex;
+}
+
 p,
 span,
 h1,
@@ -18,4 +37,18 @@ h6 {
 button,
 a {
   cursor: pointer;
+}
+
+.top{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.back-button{
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
 }
