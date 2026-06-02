@@ -5,8 +5,8 @@
 }
 
 .home{
-    min-height: 100vh;
-    background-color: black;
+    background-color: #353535;
+    flex: 1;
 }
 
 .match-section{

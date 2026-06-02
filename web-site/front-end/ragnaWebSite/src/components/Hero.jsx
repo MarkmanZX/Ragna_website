@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
 
 function Hero() {
@@ -10,7 +11,9 @@ function Hero() {
                     Mais que um time. Uma identidade.
                 </p>
 
-                <button onClick={() => window.location.href = '/cast'}>Ver Elenco</button>
+                <Link to="/cast">
+                    <button>Ver Elenco</button>
+                </Link>
             </div>
         </section>
     );
