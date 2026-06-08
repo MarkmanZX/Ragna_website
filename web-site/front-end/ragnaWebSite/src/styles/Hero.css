@@ -6,22 +6,23 @@
 
 .hero{
     min-height: 58vh;
-    background-color: #353535;
+    background-color:#3b3b3b;
+    position: relative;
     display: flex;
     align-items: center;
     padding: 0px 70px;
-    color: white;
-    margin-bottom: 0 !important;
+    overflow: hidden;
 }
 
 .hero-content h1{
     font-size: 80px;
     margin-bottom: 20px;
+    color:  rgb(255, 255, 255);
 }
 
 .hero-content p{
     font-size: 24px;
-    color: #ccc;
+    color: white;
     margin-bottom: 30px;
 }
 
@@ -29,7 +30,7 @@
     padding: 15px 35px;
     border: none;
     border-radius: 10px;
-    background-color: blue;
+    background-color: darkblue;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -38,5 +39,19 @@
 }
 
 .hero-content button:hover{
-    background-color: darkblue;
+    background-color:  rgba(9, 32, 87, 1);
+}
+
+.hero-background {
+    position: absolute;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.hero-background img{
+    width: 550px;
+    height: 430px;
+    opacity: 0.1;
 }

@@ -1,3 +1,7 @@
+.castFull{
+    background-color: #3b3b3b;
+}
+
 .containerCast{
     display: flex;
     align-items: center;

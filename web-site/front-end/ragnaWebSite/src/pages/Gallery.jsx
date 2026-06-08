@@ -4,7 +4,7 @@ import Pessoa from '../assets/images/pessoa.png';
 function Gallery(){
     return(
 
-        <div>
+        <div className="galleryFull">
             <div className="top">
                 <button className="back-button" onClick={() => window.location.href = '/'}>◀</button>
                 <h1>Galeria</h1>

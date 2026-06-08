@@ -25,7 +25,6 @@ function Footer(){
                 <div className="footerSection">
                     <h2>Redes Sociais</h2>
                     <p>Instagram</p>
-                    <p>Tik Tok</p>
                 </div>
             </div>
 

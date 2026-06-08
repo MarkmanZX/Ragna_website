@@ -3,7 +3,7 @@ import Pessoa from '../assets/images/pessoa.png';
 
 function Games(){
     return(
-       <div>
+       <div className="gamesFull">
             <div className="top">
                 <button className="back-button" onClick={() => window.location.href = '/'}>◀</button>
                 <h1>Jogos</h1>

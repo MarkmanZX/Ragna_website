@@ -3,7 +3,7 @@ import Pessoa from '../assets/images/pessoa.png';
 
 function Cast(){
     return(
-        <div>
+        <div className="castFull">
             <div className="top">
                 <button className="back-button" onClick={() => window.location.href = '/'}>◀</button>
                 <h1>Elenco</h1>
