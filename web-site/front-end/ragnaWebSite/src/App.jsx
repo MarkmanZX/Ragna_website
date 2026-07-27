@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Cast from './pages/Cast';
 import Games from './pages/Games';
 import Gallery from './pages/Gallery';
+import Login from './pages/Login';
 
 function App() {
   return(
@@ -17,6 +18,7 @@ function App() {
       <Route path="/cast" element={<Cast />} />
       <Route path="/games" element={<Games />} />
       <Route path="/gallery" element={<Gallery />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
     <Footer />
     </div>
