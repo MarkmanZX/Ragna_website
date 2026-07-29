@@ -1,23 +1,33 @@
 import logoRagna from "../assets/images/logoRagna.png";
 
+import { supabase } from "../services/supabase";
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function Login() {
     
+    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [lembrar, setLembrar] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log({
+        const { data, error } = await supabase.auth.signInWithPassword({
             email,
-            password,
-            lembrar
+            password: password,
         });
+
+        if (error){
+            alert("Email ou senha inválidos.");
+            return;
+        }
+
+        console.log(data.user);
+        navigate("/");
 
     };
     return (
