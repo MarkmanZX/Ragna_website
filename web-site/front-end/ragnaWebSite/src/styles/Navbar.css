@@ -28,6 +28,16 @@
     list-style: none;
 }
 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: rgba(9, 32, 87, 1);
+}
+
 .nav-links li{
     cursor: pointer;
     transition: 0.3s;

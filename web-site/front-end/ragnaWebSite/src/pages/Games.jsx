@@ -1,89 +1,162 @@
-import '../pages/Games.css';
-import Pessoa from '../assets/images/pessoa.png';
+import { useState, useEffect } from "react";
+import "../pages/Games.css";
 
-function Games(){
-    return(
-       <div>
+import Pessoa from "../assets/images/pessoa.png";
+import { getGames } from "../services/GamesService";
+function Games() {
+    const [games, setGames] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        async function loadGames() {
+            try {
+                setLoading(true);
+                setError(null);
+
+                const data = await getGames();
+
+                setGames(data || []);
+            } catch (err) {
+                console.error("Erro ao carregar jogos:", err);
+
+                setError("Não foi possível carregar os jogos.");
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        loadGames();
+    }, []);
+
+    function formatDate(date) {
+        if (!date) return "";
+
+        const parts = date.split("-");
+
+        if (parts.length !== 3) {
+            return date;
+        }
+
+        return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
+
+    function formatTime(time) {
+        if (!time) return "";
+
+        return time.substring(0, 5);
+    }
+
+    return (
+        <div className="gamesFull">
+
             <div className="top">
-                <button className="back-button" onClick={() => window.location.href = '/'}>◀</button>
+
+                <button
+                    className="back-button"
+                    onClick={() => {
+                        window.location.href = "/";
+                    }}
+                >
+                    ◀
+                </button>
+
                 <h1>Jogos</h1>
+
             </div>
-       
+
             <div className="containerGame">
+
                 <div className="placeGame">
-                    <div className="cardGame">
-                        <div className="teamsGame">
-                            <div className="allyTeamGame">
-                                <img src={Pessoa}/>
-                                <h2>Ragna FC</h2>
-                            </div>
-                            <div className="versus">
-                                ✖️ 
-                            </div>
-                            <div className="enemyTeamGame">
-                                <img src={Pessoa}/>
-                                <h2>Etec FM</h2>
-                            </div>
-                        </div>
-                            <div className="gameInfo">
-                                 <p>local: Estádio Ragna</p>
-                                <p>data: 15/06/2023</p>
-                                <p>horário: 19:00</p>
-                            </div>
-                        </div>
-                    
 
+                    {loading && (
+                        <p>Carregando jogos...</p>
+                    )}
 
+                    {!loading && error && (
+                        <p>{error}</p>
+                    )}
 
+                    {!loading &&
+                        !error &&
+                        games.length === 0 && (
+                            <p>Nenhum jogo cadastrado.</p>
+                        )}
 
-                    <div className="cardGame">
-                        <div className="teamsGame">
-                            <div className="allyTeamGame">
-                                <img src={Pessoa}/>
-                                <h2>Ragna FC</h2>
-                            </div>
-                            <div className="versus">
-                                ✖️ 
-                            </div>
-                            <div className="enemyTeamGame">
-                                <img src={Pessoa}/>
-                                <h2>Amigos do Zamba</h2>
-                            </div>
-                        </div>
-                            <div className="gameInfo">
-                                 <p>local: São Paulão</p>
-                                <p>data: 13/08/2025</p>
-                                <p>horário: 20:00</p>
-                            </div>
-                        
-                    </div>
+                    {!loading &&
+                        !error &&
+                        games.length > 0 &&
+                        games.map((gameData) => (
 
+                            <div
+                                className="cardGame"
+                                key={gameData.id}
+                            >
 
+                                <div className="teamsGame">
 
+                                    <div className="allyTeamGame">
 
-                    <div className="cardGame">
-                        <div className="teamsGame">
-                            <div className="allyTeamGame">
-                                <img src={Pessoa}/>
-                                <h2>Ragna FC</h2>
+                                        <img
+                                            src={
+                                                gameData.escudo_time_casa ||
+                                                Pessoa
+                                            }
+                                            alt={`Escudo ${gameData.time_casa}`}
+                                        />
+
+                                        <h2>
+                                            {gameData.time_casa}
+                                        </h2>
+
+                                    </div>
+
+                                    <div className="versus">
+                                        ✖️
+                                    </div>
+
+                                    <div className="enemyTeamGame">
+
+                                        <img
+                                            src={
+                                                gameData.escudo_time_visitante ||
+                                                Pessoa
+                                            }
+                                            alt={`Escudo ${gameData.time_visitante}`}
+                                        />
+
+                                        <h2>
+                                            {gameData.time_visitante}
+                                        </h2>
+
+                                    </div>
+
+                                </div>
+
+                                <div className="gameInfo">
+
+                                    <p>
+                                        local: {gameData.local}
+                                    </p>
+
+                                    <p>
+                                        data: {formatDate(gameData.data)}
+                                    </p>
+
+                                    <p>
+                                        horário: {formatTime(gameData.horario)}
+                                    </p>
+
+                                </div>
+
                             </div>
-                            <div className="versus">
-                                ✖️ 
-                            </div>
-                            <div className="enemyTeamGame">
-                                <img src={Pessoa}/>
-                                <h2>Bar do Bola B</h2>
-                            </div>
-                        </div>
-                            <div className="gameInfo">
-                                 <p>local: Tico do Manolo</p>
-                                <p>data: 09/04/2026</p>
-                                <p>horário: 18:30</p>
-                            </div>
-                        
-                    </div>
+
+                        ))}
+
                 </div>
+
             </div>
+
         </div>
     );
 }

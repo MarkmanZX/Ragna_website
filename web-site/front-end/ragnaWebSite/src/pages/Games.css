@@ -1,3 +1,7 @@
+.gamesFull{
+    background-color: #3b3b3b;
+}
+
 .containerGame{
     display: flex;
     justify-content: center;

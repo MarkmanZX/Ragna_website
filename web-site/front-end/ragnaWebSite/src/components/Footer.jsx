@@ -12,8 +12,8 @@ function Footer(){
 
                 <div className="footerSection">
                     <h2>Contato</h2>
-                    <p>Email: contato@ragnafc.com</p>
-                    <p>Telefone: (14) 99999-9999</p>
+                    <p>Email: ragnafcavare@gmail.com</p>
+                    <p>Telefone: (14) 98803-0027</p>
                 </div>
 
                 <div className="footerSection">
@@ -25,7 +25,6 @@ function Footer(){
                 <div className="footerSection">
                     <h2>Redes Sociais</h2>
                     <p>Instagram</p>
-                    <p>Tik Tok</p>
                 </div>
             </div>
 

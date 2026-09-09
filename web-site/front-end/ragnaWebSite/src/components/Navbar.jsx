@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import logoRagna from '../assets/images/logoRagna.png';
+import { useAuth } from '../hooks/useAuth';
 
 function Navbar() {
+    const { role, user, logout } = useAuth();
     return(
         <nav className="navbar">
             <img src={logoRagna} className="logoRagna" />
@@ -19,6 +21,24 @@ function Navbar() {
                 <li>
                     <Link to="/gallery"> Galeria </Link>
                 </li>
+                {!user ? (
+                    <li>
+                        <Link to="/login"> Login</Link>
+                    </li>
+                ) : (
+                    <>
+                    {role === "admin" && (
+                        <li>
+                            <Link to="/admin"> Admin Painel</Link>
+                        </li>
+                    )}
+                    <li>
+                        <button onClick={logout} className="logout-btn">
+                            Sair
+                        </button>
+                    </li>
+                    </>
+                )}
             </ul>
         </nav>
     );
